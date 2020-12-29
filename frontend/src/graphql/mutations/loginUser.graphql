@@ -1,5 +1,0 @@
-mutation LoginUser($username: String!, $password: String!) {
-  loginUser(username: $username, password: $password) {
-    ...DefaultUser
-  }
-}

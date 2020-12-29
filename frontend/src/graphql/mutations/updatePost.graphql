@@ -1,5 +1,0 @@
-mutation UpdatePost($id: Int!, $postInput: PostInput!) {
-  updatePost(id: $id, postInput: $postInput) {
-    ...DefaultPost
-  }
-}

@@ -1,9 +1,0 @@
-fragment DefaultPost on Post {
-  id
-  createdAt
-  updatedAt
-  title
-  textSnippet
-  points
-  creatorId
-}

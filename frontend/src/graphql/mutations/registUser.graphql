@@ -1,5 +1,0 @@
-mutation RegisterUser($userInput: UserInput!) {
-  registerUser(userInput: $userInput) {
-    ...DefaultUser
-  }
-}
