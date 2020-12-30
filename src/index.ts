@@ -26,14 +26,19 @@ const main = async () => {
 
   app.use(
     cors({
-      origin: /localhost/,
+      origin: [/localhost/, /petrusprojects/],
       credentials: true,
     })
   );
 
+  app.set("trust proxy", 1);
+
   // express-session connects to Redis to store user information
   const RedisStore = connectRedis(session);
-  const redisClient = new Redis();
+  const redisClient = new Redis({
+    port: 6379,
+    host: process.env.REDIS_HOST as string,
+  });
 
   app.use(
     session({
@@ -42,8 +47,7 @@ const main = async () => {
         disableTouch: true,
       }),
       name: COOKIE_NAME,
-      // TODO change to env variable
-      secret: "__secret-redis__",
+      secret: process.env.REDIS_SECRET as string,
       resave: false,
       saveUninitialized: false,
       // redis also stores cookie config which is set with express-session
@@ -52,6 +56,7 @@ const main = async () => {
         maxAge: 1000 * 60 * 60 * 24 * 365, // one year
         httpOnly: true, // can't access cookie client-side
         secure: __prod__, // only works in https
+        // secure: false,
         sameSite: "lax",
       },
     })
@@ -74,7 +79,7 @@ const main = async () => {
 
   apolloServer.applyMiddleware({ app, cors: false });
 
-  app.listen(4000, () => {
+  app.listen(4000, "0.0.0.0", () => {
     console.log("server listening on port 4000");
   });
 };

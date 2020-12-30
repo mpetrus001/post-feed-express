@@ -3,6 +3,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,linux,node,react
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,linux,node,react
 
+### Custom ###
+db/postgres-data
+
 ### Linux ###
 *~
 
@@ -156,4 +159,3 @@ sketch
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,linux,node,react
 
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
-

@@ -6,10 +6,11 @@ dotenv.config();
 
 export default {
   type: "postgres" as const,
-  host: process.env.POSTGRES_HOST ?? "localhost",
-  username: process.env.POSTGRES_USER ?? "admin",
-  password: process.env.POSTGRES_PASSWORD ?? "admin",
-  database: process.env.POSTGRES_DB ?? "db",
+  host: process.env.POSTGRES_HOST,
+  port: 5432,
+  username: process.env.POSTGRES_USER,
+  password: process.env.POSTGRES_PASSWORD,
+  database: process.env.POSTGRES_DB,
   entities: [path.join(__dirname, "./entities/*")],
   migrations: [path.join(__dirname, "./migrations/*")],
   logging: !__prod__,

@@ -1,7 +1,7 @@
 import { AuthenticationError, UserInputError } from "apollo-server-express";
 import argon2 from "argon2";
 import { nanoid } from "nanoid";
-import { MyContext } from "src/types";
+import { MyContext } from "../types";
 import {
   Arg,
   Ctx,
