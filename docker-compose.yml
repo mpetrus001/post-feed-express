@@ -14,7 +14,7 @@ services:
   session:
     image: redis
 
-  app:
+  api:
     image: mpetrus/post-feed-express:1.0.0
     depends_on:
       - db
