@@ -77,7 +77,7 @@ const main = async () => {
     }),
   });
 
-  apolloServer.applyMiddleware({ app, cors: false });
+  apolloServer.applyMiddleware({ app, path: "/api/graphql", cors: false });
 
   app.listen(4000, "0.0.0.0", () => {
     console.log("server listening on port 4000");
