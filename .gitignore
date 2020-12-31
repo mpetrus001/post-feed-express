@@ -5,6 +5,7 @@
 
 ### Custom ###
 db/postgres-data
+*.tar
 
 ### Linux ###
 *~

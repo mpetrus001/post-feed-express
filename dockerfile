@@ -1,6 +1,6 @@
 # docker build -t mpetrus/post-feed-express:1.0.0 .
 #
-# docker save -o ~/projects/images/tm-nestjs.tar mpetrus/post-feed-express:1.0.0
+# docker save -o ./post-feed-express-100.tar mpetrus/post-feed-express:1.0.0
 
 FROM node:14-alpine
 
