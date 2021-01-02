@@ -1,17 +1,18 @@
-import { User } from "../entities/User";
 import { MigrationInterface, QueryRunner } from "typeorm";
+import { User } from "../entities/User";
 
-export class SeedUserData1608873836820 implements MigrationInterface {
+export class UserSeed1609599353963 implements MigrationInterface {
+  name = "UserSeed1609599353963";
   newUsers: User[] = [];
   public async up(queryRunner: QueryRunner): Promise<void> {
-    console.log("adding development seed user data");
+    console.log("adding production seed user data");
     const UserRepository = queryRunner.connection.getRepository(User);
     this.newUsers = await UserRepository.save([
       {
-        username: "sophie",
-        email: "sophie@computer.local",
+        username: "guest",
+        email: "guest@computer.local",
         password:
-          "$argon2i$v=19$m=4096,t=3,p=1$0d/0G5JRziqKuczKZA3xYg$7X0K+dCS0w2HwazbUsCTaipkXSbHHwU5YR8XHsr29vc",
+          "$argon2i$v=19$m=4096,t=3,p=1$G7uPsnyn9DWCi4tOsS7lhA$K/NkXkBVgfESi0jIxmo01Z+zK5NupZYZI/mjiOMWP6o",
       },
       {
         username: "matthew",
@@ -20,10 +21,10 @@ export class SeedUserData1608873836820 implements MigrationInterface {
           "$argon2i$v=19$m=4096,t=3,p=1$8D3+5UMfNiqYFK5ZCxtAVQ$3waVgf0kwEJUajKTYvK5Kk+8rQ4T9ufSYMSaXs+12Zk",
       },
       {
-        username: "sadie",
-        email: "sadie@computer.local",
+        username: "sophie",
+        email: "sophie@computer.local",
         password:
-          "$argon2i$v=19$m=4096,t=3,p=1$P5ALf3yQ6DUWUlmvyWUGLQ$NETw1X7RshribaGspKBvgffUhW8VW1vLRvtFOHagt7Y",
+          "$argon2i$v=19$m=4096,t=3,p=1$0d/0G5JRziqKuczKZA3xYg$7X0K+dCS0w2HwazbUsCTaipkXSbHHwU5YR8XHsr29vc",
       },
     ]);
   }

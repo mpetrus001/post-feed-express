@@ -1,4 +1,4 @@
-# docker build -t mpetrus/post-feed-express:1.0.0 .
+# docker build -t mpetrus/post-feed-express:1.0.1 .
 #
 # docker save -o ./post-feed-express-100.tar mpetrus/post-feed-express:1.0.0
 

@@ -6,6 +6,8 @@
 ### Custom ###
 db/postgres-data
 *.tar
+.env.dev
+.env.local
 
 ### Linux ###
 *~

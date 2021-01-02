@@ -18,7 +18,9 @@ const main = async () => {
   // typeorm interfaces with the postgres database
   // and creates database tables based on the Entities in the config
   const dbConnection = await createConnection(ormconfig);
-  await dbConnection.runMigrations();
+  await dbConnection.runMigrations({
+    transaction: "each",
+  });
   const UserRepository = dbConnection.getRepository(User);
   const PostRepository = dbConnection.getRepository(Post);
 
