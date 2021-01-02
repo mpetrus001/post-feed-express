@@ -14,8 +14,8 @@ export async function sendEmail({
   // let testAccount = await nodemailer.createTestAccount();
   // console.log("test account", testAccount);
   const testAccount = {
-    user: "pxckvsxty42qogf6@ethereal.email",
-    pass: "PVu99BSafD9WMKcUs6",
+    user: "",
+    pass: "",
   };
 
   // create reusable transporter object using the default SMTP transport
