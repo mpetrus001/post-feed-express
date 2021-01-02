@@ -7,8 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "tsc -w",
     "dev": "NODE_ENV=development nodemon dist/index.js",
-    "start": "NODE_ENV=production node dist/index.js",
-    "migration:create": ""
+    "start": "NODE_ENV=production node dist/index.js"
   },
   "repository": {
     "type": "git",
