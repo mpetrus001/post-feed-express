@@ -1,14 +1,14 @@
 # Post-Feed Backend
 
-The backend for a fullstack post feed built with React, Typescript, and GraphQL. See the frontend for the project at [Post-Feed Frontend](https://github.com/mpetrus001/post-feed-nextjs).
+The backend for a fullstack post feed built with React, Typescript, and GraphQL. A running example can be seen at [Post-Feed](https://post-feed.petrusprojects.com).
 
 ## Description
 
-The project is a feed of posts with a GraphQL API. By using the GraphQL endpoint, a user can sign in using a username and password which generates a secure token. With that token/cookie, the home page will show the user's upvotes and downvotes by coloring the arrows; votes can be changed by selecting the other arrow. A user can edit their own posts by clicking the post title, and selecting edit post. The changes are reflected on the home page.
+The project is a feed of posts with a GraphQL API. A user can sign in using a username and password which generates a secure token. With that token/cookie, the home page will show the user's current upvotes and downvotes; votes can be changed by selecting the alternate arrow. A user can edit or delete their own posts by clicking the post title, and selecting edit post. The changes are reflected on the home page. The home page can be "infintely" scrolled by clicking load more on the bottom; this is achieved with cursor-pagination.
 
-The GraphQL API is a Node app written in typescript using the Express server platform. User authentication is handled using Express-Session and setting cookies in the user's browser. Posts are persisted to a postgres database using a Repository pattern with TypeORM.
+The backend is a GraphQL API Node app written in typescript using the Express server platform with the Apollog GraphQL library. User authentication is handled using Express-Session and setting cookies in the user's browser. Posts are persisted to a postgres database using a Repository pattern with TypeORM. Sessions are stored in a redis instance. Some features, including user registration and password reset have been disabled for security reasons.
 
-A frontend using NextJS, with sprinkles of server-side rendering has been built; see [Post-Feed Frontend](https://github.com/mpetrus001/post-feed-nextjs) for more details.
+A frontend using NextJS has been built; see [Post-Feed Frontend](https://github.com/mpetrus001/post-feed-nextjs) for more details.
 
 The project started by completing the [Fullstack React GraphQL TypeScript Tutorial](https://youtu.be/I6ypD7qv3Z8) by Ben Awad. Completion of the tutorial resulted in an API server about 90% ready. Additional features were added to the server and the project was "dockerized" for deployment.
 
