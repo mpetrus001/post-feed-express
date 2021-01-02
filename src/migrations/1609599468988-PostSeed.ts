@@ -1,11 +1,11 @@
-import { Post } from "../entities/Post";
 import { MigrationInterface, QueryRunner } from "typeorm";
+import { Post } from "../entities/Post";
 
-export class SeedPostData1608873846892 implements MigrationInterface {
+export class PostSeed1609599468988 implements MigrationInterface {
+  name = "PostSeed1609599468988";
   newPosts: Post[] = [];
-
   public async up(queryRunner: QueryRunner): Promise<void> {
-    console.log("adding development seed post data");
+    console.log("adding production seed post data");
     const PostRepository = queryRunner.connection.getRepository(Post);
     const dataString = JSON.stringify([
       {
